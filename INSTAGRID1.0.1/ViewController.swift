@@ -8,14 +8,30 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+//    let imagePicker = UIImagePickerController()
+//    var currentButton : UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
- 
     
-}
+    // This method will launch the imagePicker when a button is tapped
+//        @IBAction func loadImageButtonTapped(_ sender: UIButton) {
+//            self.currentButton = sender
+//            imagePicker.allowsEditing = true
+//            imagePicker.sourceType = .photoLibrary
+//            imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+//            present(imagePicker, animated: true, completion: nil)
+//        }
+//
+//
+//
+//    @IBOutlet var photoButtons: [UIButton]!
+//
+//    @IBOutlet var layoutButtons: [UIButton]!
+//}
 
 //extension UIView {
 //
@@ -27,7 +43,7 @@ class ViewController: UIViewController {
 //            layer.render(in: rendererContext.cgContext)
 //        }
 //    }
-//}
+}
 
 
 
