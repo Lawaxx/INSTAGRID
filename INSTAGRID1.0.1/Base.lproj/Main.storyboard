@@ -25,55 +25,43 @@
                                     <constraint firstAttribute="height" constant="300" id="TJc-wN-qsz"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="gPY-uK-PDq" userLabel="Container Stack View">
-                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gPY-uK-PDq" userLabel="Container Stack View">
+                                <rect key="frame" x="72" y="312.5" width="270" height="271"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pSn-2N-V4h" userLabel="HighStack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="112.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pSn-2N-V4h" userLabel="HighStack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="130.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C8-10-HlG">
-                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="112.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C8-10-HlG" userLabel="highLeftButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <state key="normal" image="Plus"/>
-                                                <connections>
-                                                    <action selector="loadImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OHy-MY-bnf"/>
-                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV7-Eg-Ggi">
-                                                <rect key="frame" x="137.5" y="0.0" width="112.5" height="112.5"/>
-                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV7-Eg-Ggi" userLabel="highRightButton">
+                                                <rect key="frame" x="140" y="0.0" width="130" height="130.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <state key="normal" image="Plus"/>
-                                                <connections>
-                                                    <action selector="loadImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUS-IT-brt"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="4IO-ZK-gQy" userLabel="LowStack View">
-                                        <rect key="frame" x="0.0" y="137.5" width="250" height="112.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="4IO-ZK-gQy" userLabel="LowStack View">
+                                        <rect key="frame" x="0.0" y="140.5" width="270" height="130.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhK-4J-za5">
-                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="112.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhK-4J-za5" userLabel="lowLeftButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="130.5" height="130.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <state key="normal" image="Plus"/>
-                                                <connections>
-                                                    <action selector="loadImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="feO-PO-cQf"/>
-                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQw-Ys-ss6">
-                                                <rect key="frame" x="137.5" y="0.0" width="112.5" height="112.5"/>
-                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQw-Ys-ss6" userLabel="lowRightButton">
+                                                <rect key="frame" x="139.5" y="0.0" width="130.5" height="130.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <state key="normal" image="Plus"/>
-                                                <connections>
-                                                    <action selector="loadImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FKA-T9-3J9"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="1DP-8D-oHg"/>
-                                    <constraint firstAttribute="height" constant="250" id="9lb-ji-iVs"/>
+                                    <constraint firstAttribute="width" constant="270" id="1DP-8D-oHg"/>
+                                    <constraint firstAttribute="height" constant="271" id="9lb-ji-iVs"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="nXM-Ez-bPT" userLabel="Layout Stack View">
@@ -86,22 +74,31 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="rYS-I7-MvY"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 1"/>
+                                        <connections>
+                                            <action selector="layoutButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WlJ-Fq-6VI"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhm-p5-H8Y">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhm-p5-H8Y">
                                         <rect key="frame" x="120" y="14" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="AAu-nD-BkV"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Qg7-Q8-sUp"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 2"/>
+                                        <connections>
+                                            <action selector="layoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7CD-WE-du8"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ye-YW-ffi">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ye-YW-ffi">
                                         <rect key="frame" x="240" y="14" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="iAg-1d-dQH"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="nNA-QP-uWs"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 3"/>
+                                        <connections>
+                                            <action selector="layoutButton3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0qa-EM-db2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
@@ -183,13 +180,12 @@
                         </variation>
                     </view>
                     <connections>
-                        <outletCollection property="layoutButtons" destination="9ye-YW-ffi" collectionClass="NSMutableArray" id="Jhl-ZF-C9e"/>
-                        <outletCollection property="layoutButtons" destination="mhm-p5-H8Y" collectionClass="NSMutableArray" id="bmy-mD-aLc"/>
-                        <outletCollection property="layoutButtons" destination="1nw-Ue-ANw" collectionClass="NSMutableArray" id="5EC-kb-Igy"/>
-                        <outletCollection property="photoButton" destination="rhK-4J-za5" collectionClass="NSMutableArray" id="hBL-Cc-LHW"/>
-                        <outletCollection property="photoButton" destination="QQw-Ys-ss6" collectionClass="NSMutableArray" id="vGP-ga-DWE"/>
-                        <outletCollection property="photoButton" destination="7C8-10-HlG" collectionClass="NSMutableArray" id="jOG-vG-vig"/>
-                        <outletCollection property="photoButton" destination="xV7-Eg-Ggi" collectionClass="NSMutableArray" id="OYW-0Z-tH9"/>
+                        <outlet property="blueView" destination="ZHZ-e9-CTj" id="awQ-Jo-Ez4"/>
+                        <outlet property="highRightButton" destination="xV7-Eg-Ggi" id="jFt-u2-KeJ"/>
+                        <outlet property="lowRightButton" destination="QQw-Ys-ss6" id="ev8-sb-CHK"/>
+                        <outletCollection property="layoutButtons" destination="1nw-Ue-ANw" collectionClass="NSMutableArray" id="lsI-3G-kjE"/>
+                        <outletCollection property="layoutButtons" destination="mhm-p5-H8Y" collectionClass="NSMutableArray" id="9Zy-uT-pOi"/>
+                        <outletCollection property="layoutButtons" destination="9ye-YW-ffi" collectionClass="NSMutableArray" id="0QF-Bt-4jA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
