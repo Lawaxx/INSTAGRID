@@ -76,18 +76,11 @@
                                     <constraint firstAttribute="height" constant="250" id="9lb-ji-iVs"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTAGRID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ab7-F3-02K">
-                                <rect key="frame" x="134" y="44" width="154" height="30.5"/>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="25"/>
-                                <color key="textColor" red="0.94108694790000003" green="0.94124108549999996" blue="0.94105428459999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" red="0.94108694790000003" green="0.94124108549999996" blue="0.94105428459999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="nXM-Ez-bPT" userLabel="Layout Stack View">
-                                <rect key="frame" x="51" y="772" width="320" height="80"/>
+                                <rect key="frame" x="51" y="744" width="320" height="108"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nw-Ue-ANw">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="14" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="GFx-wv-NAo"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="rYS-I7-MvY"/>
@@ -95,7 +88,7 @@
                                         <state key="normal" backgroundImage="Layout 1"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhm-p5-H8Y">
-                                        <rect key="frame" x="120" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="120" y="14" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="AAu-nD-BkV"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Qg7-Q8-sUp"/>
@@ -103,7 +96,7 @@
                                         <state key="normal" backgroundImage="Layout 2"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ye-YW-ffi">
-                                        <rect key="frame" x="240" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="240" y="14" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="iAg-1d-dQH"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="nNA-QP-uWs"/>
@@ -113,17 +106,29 @@
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=regular" axis="vertical"/>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="23v-gQ-W0a">
+                                <rect key="frame" x="146" y="39" width="122" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="R49-6U-Z7z"/>
+                                    <constraint firstAttribute="height" constant="39" id="ga1-ox-LhC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.73619878289999996" green="0.83996206520000005" blue="0.8930396438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gPY-uK-PDq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ff-Df-uS0"/>
+                            <constraint firstItem="23v-gQ-W0a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BxL-ul-Kvx"/>
                             <constraint firstItem="ZHZ-e9-CTj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D8h-hl-raA"/>
-                            <constraint firstItem="Ab7-F3-02K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="134" id="EVf-mZ-ojB"/>
-                            <constraint firstItem="Ab7-F3-02K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NWh-UG-0Wz"/>
+                            <constraint firstItem="23v-gQ-W0a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-5" id="WKd-mc-uRj"/>
+                            <constraint firstItem="nXM-Ez-bPT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="350" id="WnI-Jq-EB0"/>
                             <constraint firstItem="nXM-Ez-bPT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xtd-zZ-Xo6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nXM-Ez-bPT" secondAttribute="trailing" constant="43" id="dDg-YS-74H"/>
+                            <constraint firstItem="23v-gQ-W0a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="f3Z-it-lne">
+                                <variation key="heightClass=compact-widthClass=regular" constant="-190"/>
+                            </constraint>
                             <constraint firstItem="nXM-Ez-bPT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="743" id="ghL-Hc-xy2"/>
+                            <constraint firstItem="23v-gQ-W0a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hJb-TR-SsD"/>
                             <constraint firstItem="gPY-uK-PDq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="k84-Dw-lIi"/>
                             <constraint firstItem="nXM-Ez-bPT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="4" id="kSG-Bt-qbf"/>
                             <constraint firstItem="nXM-Ez-bPT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="350" id="mSv-bP-J0A"/>
@@ -134,7 +139,6 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="nXM-Ez-bPT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="uTB-DU-ayQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ab7-F3-02K" secondAttribute="trailing" constant="126" id="wMy-bh-A0g"/>
                             <constraint firstItem="ZHZ-e9-CTj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zGC-Y2-bx1"/>
                         </constraints>
                         <variation key="default">
@@ -142,6 +146,9 @@
                                 <exclude reference="dDg-YS-74H"/>
                                 <exclude reference="oPN-G5-EjO"/>
                                 <exclude reference="rdF-cX-bPM"/>
+                                <exclude reference="WKd-mc-uRj"/>
+                                <exclude reference="f3Z-it-lne"/>
+                                <exclude reference="hJb-TR-SsD"/>
                                 <exclude reference="Xtd-zZ-Xo6"/>
                                 <exclude reference="ghL-Hc-xy2"/>
                                 <exclude reference="kSG-Bt-qbf"/>
@@ -154,6 +161,8 @@
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
                                 <include reference="oPN-G5-EjO"/>
+                                <include reference="f3Z-it-lne"/>
+                                <include reference="hJb-TR-SsD"/>
                                 <include reference="7ff-Df-uS0"/>
                                 <include reference="k84-Dw-lIi"/>
                                 <include reference="Xtd-zZ-Xo6"/>
@@ -167,6 +176,7 @@
                             <mask key="constraints">
                                 <include reference="dDg-YS-74H"/>
                                 <include reference="rdF-cX-bPM"/>
+                                <include reference="WKd-mc-uRj"/>
                                 <include reference="kSG-Bt-qbf"/>
                                 <include reference="uTB-DU-ayQ"/>
                             </mask>
@@ -188,6 +198,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Instagrid" width="41.5" height="13"/>
         <image name="Layout 1" width="27" height="27"/>
         <image name="Layout 2" width="27" height="27"/>
         <image name="Layout 3" width="27" height="27"/>
