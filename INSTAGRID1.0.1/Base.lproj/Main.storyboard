@@ -84,7 +84,7 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="nXM-Ez-bPT" userLabel="Layout Stack View">
-                                <rect key="frame" x="51" y="782" width="320" height="80"/>
+                                <rect key="frame" x="51" y="772" width="320" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nw-Ue-ANw">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -121,15 +121,17 @@
                             <constraint firstItem="ZHZ-e9-CTj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D8h-hl-raA"/>
                             <constraint firstItem="Ab7-F3-02K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="134" id="EVf-mZ-ojB"/>
                             <constraint firstItem="Ab7-F3-02K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NWh-UG-0Wz"/>
+                            <constraint firstItem="nXM-Ez-bPT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xtd-zZ-Xo6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nXM-Ez-bPT" secondAttribute="trailing" constant="43" id="dDg-YS-74H"/>
                             <constraint firstItem="nXM-Ez-bPT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="743" id="ghL-Hc-xy2"/>
                             <constraint firstItem="gPY-uK-PDq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="k84-Dw-lIi"/>
                             <constraint firstItem="nXM-Ez-bPT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="4" id="kSG-Bt-qbf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nXM-Ez-bPT" secondAttribute="bottom" constant="26" id="oPN-G5-EjO"/>
-                            <constraint firstItem="nXM-Ez-bPT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="47" id="orS-Mm-CGT"/>
-                            <constraint firstAttribute="trailing" secondItem="nXM-Ez-bPT" secondAttribute="trailing" constant="29" id="pOh-3A-tPh"/>
+                            <constraint firstItem="nXM-Ez-bPT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="350" id="mSv-bP-J0A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nXM-Ez-bPT" secondAttribute="bottom" constant="24" id="oPN-G5-EjO"/>
+                            <constraint firstItem="nXM-Ez-bPT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="orS-Mm-CGT"/>
+                            <constraint firstAttribute="trailing" secondItem="nXM-Ez-bPT" secondAttribute="trailing" constant="30" id="pOh-3A-tPh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nXM-Ez-bPT" secondAttribute="bottom" id="rdF-cX-bPM">
-                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="nXM-Ez-bPT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="uTB-DU-ayQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ab7-F3-02K" secondAttribute="trailing" constant="126" id="wMy-bh-A0g"/>
@@ -140,8 +142,10 @@
                                 <exclude reference="dDg-YS-74H"/>
                                 <exclude reference="oPN-G5-EjO"/>
                                 <exclude reference="rdF-cX-bPM"/>
+                                <exclude reference="Xtd-zZ-Xo6"/>
                                 <exclude reference="ghL-Hc-xy2"/>
                                 <exclude reference="kSG-Bt-qbf"/>
+                                <exclude reference="mSv-bP-J0A"/>
                                 <exclude reference="orS-Mm-CGT"/>
                                 <exclude reference="pOh-3A-tPh"/>
                                 <exclude reference="uTB-DU-ayQ"/>
@@ -152,7 +156,9 @@
                                 <include reference="oPN-G5-EjO"/>
                                 <include reference="7ff-Df-uS0"/>
                                 <include reference="k84-Dw-lIi"/>
-                                <include reference="ghL-Hc-xy2"/>
+                                <include reference="Xtd-zZ-Xo6"/>
+                                <exclude reference="ghL-Hc-xy2"/>
+                                <include reference="mSv-bP-J0A"/>
                                 <include reference="orS-Mm-CGT"/>
                                 <include reference="pOh-3A-tPh"/>
                             </mask>
