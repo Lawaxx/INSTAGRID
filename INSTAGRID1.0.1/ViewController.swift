@@ -114,88 +114,61 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var lowRightButton: UIButton!
    
     
-//    @IBAction func handleSwipes(_ sender: UISwipeGestureRecognizer?) {
-//        if let gesture = sender {
-//            if UIDevice.current.orientation.isPortrait && gesture.direction == .up {
-//                moveBlueViewUp()
-//            } else if UIDevice.current.orientation.isLandscape && gesture.direction == .left {
-//                moveMainViewLeft()
-//            }
-//        }
-//    }
-//func moveBlueViewUp() {
-//             UIView.animate(withDuration: 2, animations: {
-//                 self.blueView.transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height)
-//             }, completion: {
-//                 (true) in
-//                 self.checkLayout()
-//             })
-//         }
-//         func moveMainViewLeft() {
-//             UIView.animate(withDuration: 2, animations: {
-//                 self.blueView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
-//             }, completion: {
-//                 (true) in
-//                 self.checkLayout()
-//             })
-//         }
-//
-////    @IBAction func handleSwipe(_ sender: UISwipeGestureRecognizer?) {
-////            if let gesture = sender {
-////                if UIDevice.current.orientation.isPortrait && gesture.direction == .up {
-////                    moveBlueViewUp()
-////                } else if UIDevice.current.orientation.isLandscape && gesture.direction == .left {
-////                    moveMainViewLeft()
-////                }
-////            }
-////        }
-////    func moveBlueViewUp() {
-////                 UIView.animate(withDuration: 2, animations: {
-////                     self.blueView.transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height)
-////                 }, completion: {
-////                     (true) in
-////                     self.checkLayout()
-////                 })
-////             }
-////             func moveMainViewLeft() {
-////                 UIView.animate(withDuration: 2, animations: {
-////                     self.blueView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
-////                 }, completion: {
-////                     (true) in
-////                     self.checkLayout()
-////                 })
-////             }
-//
-//    func shareLayout() {
-//              let content = blueView.asImage()
-//              let activityController = UIActivityViewController(activityItems: [content], applicationActivities: nil)
-//              self.present(activityController, animated: true, completion: nil)
-//              // We use the completion handler to move back the mainView when the activityController is closed
-//              activityController.completionWithItemsHandler = {  (activity, success, items, error) in
-//                  UIView.animate(withDuration: 1, animations: {
-//                      self.blueView.transform = .identity
-//                  }, completion: nil)
-//              }
-//          }
-//
-//    // This function will present an alert if the user tries to share an empty grid
-//          func checkLayout() {
-//              let alert = UIAlertController(title: "Empty Grid", message: "Are you sure you want to share an empty grid ?", preferredStyle: .alert)
-//              alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-//                  self.shareLayout() } ))
-//              alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
-//                  self.blueView.transform = .identity
-//              }))
-//              if layoutIsEmpty == true {
-//                  self.present(alert, animated: true)
-//              } else {
-//                  shareLayout()
-//              }
-//          }
-
+    @IBAction func handleSwipe(_ sender: UISwipeGestureRecognizer?) {
+        if let gesture = sender {
+            if UIDevice.current.orientation.isPortrait && gesture.direction == .up {
+                moveMainViewUp()
+            } else if UIDevice.current.orientation.isLandscape && gesture.direction == .left {
+                moveMainViewLeft()
+            }
+        }
+    }
+    
+    func moveMainViewUp() {
+                 UIView.animate(withDuration: 2, animations: {
+                     self.blueView.transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height)
+                 }, completion: {
+                     (true) in
+                     self.checkLayout()
+                 })
+             }
+             func moveMainViewLeft() {
+                 UIView.animate(withDuration: 2, animations: {
+                     self.blueView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
+                 }, completion: {
+                     (true) in
+                     self.checkLayout()
+                 })
+             }
 
     
+    // This function will present an alert if the user tries to share an empty grid
+         func checkLayout() {
+             let alert = UIAlertController(title: "Empty Grid", message: "Are you sure you want to share an empty grid ?", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                 self.shareLayout() } ))
+             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
+                 self.blueView.transform = .identity
+             }))
+             if layoutIsEmpty == true {
+                 self.present(alert, animated: true)
+             } else {
+                 shareLayout()
+             }
+         }
     
+    
+    func shareLayout() {
+              let content = blueView.asImage()
+              let activityController = UIActivityViewController(activityItems: [content], applicationActivities: nil)
+              self.present(activityController, animated: true, completion: nil)
+              // We use the completion handler to move back the mainView when the activityController is closed
+              activityController.completionWithItemsHandler = {  (activity, success, items, error) in
+                  UIView.animate(withDuration: 1, animations: {
+                      self.blueView.transform = .identity
+                  }, completion: nil)
+              }
+          }
     
     
     
