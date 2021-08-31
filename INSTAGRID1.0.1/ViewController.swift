@@ -40,7 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeRight.direction = .right
         self.view!.addGestureRecognizer(swipeRight)
-        
+
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeUp.direction = .up
         self.view!.addGestureRecognizer(swipeUp)
@@ -50,9 +50,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.view!.addGestureRecognizer(swipeDown)
     }
     
-    // Function Swipe&Share
+//     Function Swipe&Share
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
-        if gesture.direction == UISwipeGestureRecognizer.Direction.left {
+        if gesture.direction == UISwipeGestureRecognizer.Direction.left && UIApplication.shared.statusBarOrientation.isLandscape {
             print("Swipe Left")
             moveMainViewLeft()
         }
@@ -70,8 +70,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var lowRightButton: UIButton!
     
     
-    
-    
+   // Saw if the view is Landscape or Portrait
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { context in
+            if UIApplication.shared.statusBarOrientation.isLandscape {
+                // activate landscape changes
+            } else {
+                // activate portrait changes
+            }
+        })
+    }
     
    // Function for adding picture to photo buttons
     @IBAction func presentImagePicker(from sender: UIButton) {
