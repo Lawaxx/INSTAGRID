@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController {
     
     
     
@@ -30,38 +30,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
         
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeGesture.direction = [.left, .right, .up, .down]
-        view.addGestureRecognizer(swipeGesture)
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeft.direction = .left
         self.view!.addGestureRecognizer(swipeLeft)
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeRight.direction = .right
-        self.view!.addGestureRecognizer(swipeRight)
-
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeUp.direction = .up
         self.view!.addGestureRecognizer(swipeUp)
-        
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeDown.direction = .down
-        self.view!.addGestureRecognizer(swipeDown)
     }
     
-//     Function Swipe&Share
+    //     Function Swipe&Share
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
         if gesture.direction == UISwipeGestureRecognizer.Direction.left && UIApplication.shared.statusBarOrientation.isLandscape {
             print("Swipe Left")
             moveMainViewLeft()
         }
-        else if gesture.direction == UISwipeGestureRecognizer.Direction.up {
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.up && UIApplication.shared.statusBarOrientation.isPortrait {
             print("Swipe Up")
             moveMainViewUp()
         }
     }
     
+    @IBOutlet weak var swipeText: UILabel!
+    @IBOutlet weak var swipeArrow: UIButton!
     
     
     @IBOutlet var layoutButtons: [UIButton]!
@@ -70,18 +61,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var lowRightButton: UIButton!
     
     
-   // Saw if the view is Landscape or Portrait
+    // Saw if the view is Landscape or Portrait
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { context in
             if UIApplication.shared.statusBarOrientation.isLandscape {
+                self.swipeText.text = "Swipe left to share"
+                self.swipeArrow.transform = CGAffineTransform(rotationAngle: 30)
                 // activate landscape changes
             } else {
+                self.swipeText.text = "Swipe up to share"
+                self.swipeArrow.transform = CGAffineTransform(rotationAngle: 0)
                 // activate portrait changes
             }
         })
     }
     
-   // Function for adding picture to photo buttons
+    // Function for adding picture to photo buttons
     @IBAction func presentImagePicker(from sender: UIButton) {
         print("Button Click")
         self.photoButton = sender
@@ -93,7 +88,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
- // Function for change grid layout and set a "selected" image to background
+    // Function for change grid layout and set a "selected" image to background
     @IBAction func changeLayout(_ sender : UIButton) {
         sender.setBackgroundImage(UIImage(named: "Selected"), for: UIControl.State.normal)
         
@@ -131,7 +126,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-// Function for animate UP the GridView to share / Check if is empty / Share if good
+    // Function for animate UP the GridView to share / Check if is empty / Share if good
     func moveMainViewUp() {
         UIView.animate(withDuration: 1, animations: {
             self.blueView.transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height)
@@ -141,7 +136,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         })
     }
     
-// Function for animate left the GridView to share / Check if is empty / Share if good
+    // Function for animate left the GridView to share / Check if is empty / Share if good
     func moveMainViewLeft() {
         UIView.animate(withDuration: 1, animations: {
             self.blueView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
@@ -158,14 +153,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                                         self.shareLayout() } ))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
-            self.blueView.transform = .identity
-        }))
+                                        UIView.animate(withDuration: 1, animations: {
+                                            self.blueView.transform = .identity
+                                        }
+                                        )}))
         if gridIsEmpty == true {
             self.present(alert, animated: true)
         } else {
             shareLayout()
         }
     }
+    
     
     // This function open the Activity Controller to share the grid with animation
     func shareLayout() {
@@ -180,33 +178,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-   // Function to add picture at photobutton
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.photoButton?.setImage(pickedImage, for: UIControl.State.normal)
-            gridIsEmpty = false
-        }
-        dismiss(animated: true, completion: nil)
-    }
     
-    
-   // Function to set a " Selected " background image to layout choice
+    // Function to set a " Selected " background image to layout choice
     func setBackgroundImage(_: UIImage? , for : UIControl.State ) -> UIImage?{
         return imageSelect
     }
     
-    
-    
-    
-    
-    // METHOD FOR THE DELEGATE: when the user cancels image picking
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
 }
 
-//func willTransition(to newCollection: UITraitCollection,
-//               with coordinator: UIViewControllerTransitionCoordinator)
+
+
+
+
+
 
 
 // This UIView extension will permit to convert our MainView to an image file
@@ -219,12 +203,28 @@ extension UIView {
     }
 }
 
-//
 extension UIImage {
     func withAlpha(_ a: CGFloat) -> UIImage {
         return UIGraphicsImageRenderer(size: size, format: imageRendererFormat).image { (_) in
             draw(in: CGRect(origin: .zero, size: size), blendMode: .normal, alpha: a)
         }
+    }
+}
+
+extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // METHOD FOR THE DELEGATE: when the user cancels image picking
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Function to add picture at photobutton
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.photoButton?.setImage(pickedImage, for: UIControl.State.normal)
+            gridIsEmpty = false
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
 

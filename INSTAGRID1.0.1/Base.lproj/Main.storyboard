@@ -24,7 +24,7 @@
                                 <color key="textColor" red="0.94108694790000003" green="0.94124108549999996" blue="0.94105428459999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8HC-G3-Vj6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8HC-G3-Vj6" userLabel="Arrow">
                                 <rect key="frame" x="211.66666666666666" y="221.33333333333334" width="4.6666666666666572" height="3.3333333333333428"/>
                                 <state key="normal" backgroundImage="Arrow Up"/>
                             </button>
@@ -200,10 +200,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="WKd-mc-uRj"/>
-                                <exclude reference="f3Z-it-lne"/>
-                                <exclude reference="hJb-TR-SsD"/>
-                                <exclude reference="pr3-rb-lnK"/>
                                 <exclude reference="4TG-Ip-Kcm"/>
                                 <exclude reference="5gc-u3-bDd"/>
                                 <exclude reference="8Mq-Ef-dDo"/>
@@ -219,6 +215,10 @@
                                 <exclude reference="xI2-hX-qMt"/>
                                 <exclude reference="Orc-Tr-gqq"/>
                                 <exclude reference="QeL-hH-SmW"/>
+                                <exclude reference="WKd-mc-uRj"/>
+                                <exclude reference="f3Z-it-lne"/>
+                                <exclude reference="hJb-TR-SsD"/>
+                                <exclude reference="pr3-rb-lnK"/>
                                 <exclude reference="dji-Ai-EDo"/>
                                 <exclude reference="ghL-Hc-xy2"/>
                                 <exclude reference="kL7-ed-Nr9"/>
@@ -231,7 +231,6 @@
                             <mask key="constraints">
                                 <exclude reference="8XA-Fa-aQs"/>
                                 <exclude reference="bKo-T7-Beq"/>
-                                <include reference="pr3-rb-lnK"/>
                                 <include reference="8Mq-Ef-dDo"/>
                                 <exclude reference="GXq-ib-Dur"/>
                                 <include reference="nha-Y0-WNm"/>
@@ -243,6 +242,7 @@
                                 <include reference="QeL-hH-SmW"/>
                                 <exclude reference="UXP-5Z-wvy"/>
                                 <exclude reference="zGC-Y2-bx1"/>
+                                <include reference="pr3-rb-lnK"/>
                                 <exclude reference="AZd-hC-WzP"/>
                                 <exclude reference="T7q-UY-vyW"/>
                                 <include reference="dji-Ai-EDo"/>
@@ -253,9 +253,6 @@
                             <mask key="constraints">
                                 <exclude reference="8XA-Fa-aQs"/>
                                 <exclude reference="bKo-T7-Beq"/>
-                                <exclude reference="BxL-ul-Kvx"/>
-                                <include reference="f3Z-it-lne"/>
-                                <include reference="hJb-TR-SsD"/>
                                 <include reference="4TG-Ip-Kcm"/>
                                 <exclude reference="5gc-u3-bDd"/>
                                 <exclude reference="GXq-ib-Dur"/>
@@ -264,6 +261,9 @@
                                 <include reference="jrP-fj-G90"/>
                                 <exclude reference="xKc-Fg-tS7"/>
                                 <exclude reference="UXP-5Z-wvy"/>
+                                <exclude reference="BxL-ul-Kvx"/>
+                                <include reference="f3Z-it-lne"/>
+                                <include reference="hJb-TR-SsD"/>
                                 <exclude reference="AZd-hC-WzP"/>
                                 <exclude reference="T7q-UY-vyW"/>
                                 <exclude reference="ghL-Hc-xy2"/>
@@ -273,11 +273,11 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="WKd-mc-uRj"/>
                                 <include reference="oRX-54-utZ"/>
                                 <include reference="PnQ-Gp-ETO"/>
                                 <include reference="WqF-Jb-rG3"/>
                                 <exclude reference="xKc-Fg-tS7"/>
+                                <include reference="WKd-mc-uRj"/>
                                 <include reference="kSG-Bt-qbf"/>
                             </mask>
                         </variation>
@@ -286,17 +286,14 @@
                         <outlet property="blueView" destination="ZHZ-e9-CTj" id="awQ-Jo-Ez4"/>
                         <outlet property="highRightButton" destination="xV7-Eg-Ggi" id="jFt-u2-KeJ"/>
                         <outlet property="lowRightButton" destination="QQw-Ys-ss6" id="ev8-sb-CHK"/>
+                        <outlet property="swipeArrow" destination="8HC-G3-Vj6" id="7CU-Q7-BBp"/>
+                        <outlet property="swipeText" destination="yxH-64-kUF" id="Jm0-eF-bpE"/>
                         <outletCollection property="layoutButtons" destination="1nw-Ue-ANw" collectionClass="NSMutableArray" id="lsI-3G-kjE"/>
                         <outletCollection property="layoutButtons" destination="mhm-p5-H8Y" collectionClass="NSMutableArray" id="9Zy-uT-pOi"/>
                         <outletCollection property="layoutButtons" destination="9ye-YW-ffi" collectionClass="NSMutableArray" id="0QF-Bt-4jA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="up" id="7Ww-cQ-qKf">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="2gJ-Zn-ef3"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="135.07109004739337" y="129.23076923076923"/>
         </scene>
