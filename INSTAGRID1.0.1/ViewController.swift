@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     
     
@@ -84,7 +84,6 @@ class ViewController: UIViewController {
         imagePicker.sourceType = .photoLibrary
         imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
         present(imagePicker, animated: true, completion: nil)
-        gridIsEmpty = false
     }
     
     
@@ -127,7 +126,7 @@ class ViewController: UIViewController {
     
     
     // Function for animate UP the GridView to share / Check if is empty / Share if good
-    func moveMainViewUp() {
+    private func moveMainViewUp() {
         UIView.animate(withDuration: 1, animations: {
             self.blueView.transform = CGAffineTransform(translationX: 0, y: -UIScreen.main.bounds.height)
         }, completion: {
@@ -137,7 +136,7 @@ class ViewController: UIViewController {
     }
     
     // Function for animate left the GridView to share / Check if is empty / Share if good
-    func moveMainViewLeft() {
+   private func moveMainViewLeft() {
         UIView.animate(withDuration: 1, animations: {
             self.blueView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
         }, completion: {
@@ -148,7 +147,7 @@ class ViewController: UIViewController {
     
     
     // This function will present an alert if the user tries to share an empty grid
-    func checkLayout() {
+   private func checkLayout() {
         let alert = UIAlertController(title: "Empty Grid", message: "Are you sure you want to share an empty grid ?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                                         self.shareLayout() } ))
@@ -166,7 +165,7 @@ class ViewController: UIViewController {
     
     
     // This function open the Activity Controller to share the grid with animation
-    func shareLayout() {
+   private func shareLayout() {
         let content = blueView.asImage()
         let activityController = UIActivityViewController(activityItems: [content], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
@@ -180,7 +179,7 @@ class ViewController: UIViewController {
     
     
     // Function to set a " Selected " background image to layout choice
-    func setBackgroundImage(_: UIImage? , for : UIControl.State ) -> UIImage?{
+   private func setBackgroundImage(_: UIImage? , for : UIControl.State ) -> UIImage?{
         return imageSelect
     }
     
