@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Our application needs permission to use your photo library</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>InstaGrid needs permission to access photos on your device</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -67,9 +71,5 @@
 		<string>ThirstySoftRegular.otf</string>
 		<string>Delm-Medium.otf</string>
 	</array>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Besoin d&apos;une photo ?</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Besoin d&apos;une photo ?</string>
 </dict>
 </plist>
