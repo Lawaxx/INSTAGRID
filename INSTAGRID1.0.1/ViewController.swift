@@ -10,18 +10,14 @@ import UIKit
 
 final class ViewController: UIViewController {
     
+    private let imagePicker = UIImagePickerController()
+    private var photoButton : UIButton?
+    private var gridIsEmpty = true // This Boolean will permit to check wether the grid is empty or not before sharing
     
-    
-    let imagePicker = UIImagePickerController()
-    var photoButton : UIButton?
-    var gridIsEmpty = true // This Boolean will permit to check wether the grid is empty or not before sharing
-    
-    let imageSelect = UIImage(named: "Selected")
-    let layout1 = UIImage(named: "Layout 1")
-    let layout2 = UIImage(named: "Layout 2")
-    let layout3 = UIImage(named: "Layout 3")
-    
-    
+    private let imageSelect = UIImage(named: "Selected")
+    private let layout1 = UIImage(named: "Layout 1")
+    private let layout2 = UIImage(named: "Layout 2")
+    private let layout3 = UIImage(named: "Layout 3")
     
     
     override func viewDidLoad() {
@@ -38,6 +34,7 @@ final class ViewController: UIViewController {
         swipeUp.direction = .up
         self.view!.addGestureRecognizer(swipeUp)
     }
+    
     
     //     Function Swipe&Share
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
@@ -121,10 +118,6 @@ final class ViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
     // Function for animate UP the GridView to share / Check if is empty / Share if good
     private func moveMainViewUp() {
         UIView.animate(withDuration: 1, animations: {
@@ -136,7 +129,7 @@ final class ViewController: UIViewController {
     }
     
     // Function for animate left the GridView to share / Check if is empty / Share if good
-   private func moveMainViewLeft() {
+    private func moveMainViewLeft() {
         UIView.animate(withDuration: 1, animations: {
             self.blueView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
         }, completion: {
@@ -147,7 +140,7 @@ final class ViewController: UIViewController {
     
     
     // This function will present an alert if the user tries to share an empty grid
-   private func checkLayout() {
+    private func checkLayout() {
         let alert = UIAlertController(title: "Empty Grid", message: "Are you sure you want to share an empty grid ?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                                         self.shareLayout() } ))
@@ -165,7 +158,7 @@ final class ViewController: UIViewController {
     
     
     // This function open the Activity Controller to share the grid with animation
-   private func shareLayout() {
+    private func shareLayout() {
         let content = blueView.asImage()
         let activityController = UIActivityViewController(activityItems: [content], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
@@ -179,7 +172,7 @@ final class ViewController: UIViewController {
     
     
     // Function to set a " Selected " background image to layout choice
-   private func setBackgroundImage(_: UIImage? , for : UIControl.State ) -> UIImage?{
+    private func setBackgroundImage(_: UIImage? , for : UIControl.State ) -> UIImage?{
         return imageSelect
     }
     
@@ -188,8 +181,7 @@ final class ViewController: UIViewController {
 
 
 
-
-
+//MARK: EXTENSION
 
 
 // This UIView extension will permit to convert our MainView to an image file
@@ -202,6 +194,8 @@ extension UIView {
     }
 }
 
+
+
 extension UIImage {
     func withAlpha(_ a: CGFloat) -> UIImage {
         return UIGraphicsImageRenderer(size: size, format: imageRendererFormat).image { (_) in
@@ -209,6 +203,8 @@ extension UIImage {
         }
     }
 }
+
+
 
 extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
