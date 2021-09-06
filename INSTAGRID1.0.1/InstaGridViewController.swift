@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class ViewController: UIViewController {
+final class InstaGridViewController: UIViewController {
     
     private let imagePicker = UIImagePickerController()
     private var photoButton : UIButton?
@@ -48,8 +48,8 @@ final class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var swipeText: UILabel!
-    @IBOutlet weak var swipeArrow: UIButton!
+    @IBOutlet weak var swipeTextLabel: UILabel!
+    @IBOutlet weak var swipeArrowButton: UIButton!
     
     
     @IBOutlet var layoutButtons: [UIButton]!
@@ -62,12 +62,12 @@ final class ViewController: UIViewController {
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { context in
             if UIApplication.shared.statusBarOrientation.isLandscape {
-                self.swipeText.text = "Swipe left to share"
-                self.swipeArrow.transform = CGAffineTransform(rotationAngle: 30)
+                self.swipeTextLabel.text = "Swipe left to share"
+                self.swipeArrowButton.transform = CGAffineTransform(rotationAngle: 30)
                 // activate landscape changes
             } else {
-                self.swipeText.text = "Swipe up to share"
-                self.swipeArrow.transform = CGAffineTransform(rotationAngle: 0)
+                self.swipeTextLabel.text = "Swipe up to share"
+                self.swipeArrowButton.transform = CGAffineTransform(rotationAngle: 0)
                 // activate portrait changes
             }
         })
@@ -206,7 +206,7 @@ extension UIImage {
 
 
 
-extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension InstaGridViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // METHOD FOR THE DELEGATE: when the user cancels image picking
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
