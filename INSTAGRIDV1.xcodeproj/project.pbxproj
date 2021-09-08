@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		93807E0B26B021AF0057404A /* INSTAGRID1.0.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INSTAGRID1.0.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93807E0B26B021AF0057404A /* INSTAGRIDV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INSTAGRIDV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93807E0E26B021AF0057404A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93807E1026B021AF0057404A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		93807E1226B021AF0057404A /* InstaGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaGridViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		93807E0C26B021AF0057404A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				93807E0B26B021AF0057404A /* INSTAGRID1.0.1.app */,
+				93807E0B26B021AF0057404A /* INSTAGRIDV1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,9 +77,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		93807E0A26B021AF0057404A /* INSTAGRID1.0.1 */ = {
+		93807E0A26B021AF0057404A /* INSTAGRIDV1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 93807E1F26B021B30057404A /* Build configuration list for PBXNativeTarget "INSTAGRID1.0.1" */;
+			buildConfigurationList = 93807E1F26B021B30057404A /* Build configuration list for PBXNativeTarget "INSTAGRIDV1" */;
 			buildPhases = (
 				93807E0726B021AF0057404A /* Sources */,
 				93807E0826B021AF0057404A /* Frameworks */,
@@ -89,9 +89,9 @@
 			);
 			dependencies = (
 			);
-			name = INSTAGRID1.0.1;
+			name = INSTAGRIDV1;
 			productName = INSTAGRID1.0.1;
-			productReference = 93807E0B26B021AF0057404A /* INSTAGRID1.0.1.app */;
+			productReference = 93807E0B26B021AF0057404A /* INSTAGRIDV1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 93807E0626B021AF0057404A /* Build configuration list for PBXProject "INSTAGRID1.0.1" */;
+			buildConfigurationList = 93807E0626B021AF0057404A /* Build configuration list for PBXProject "INSTAGRIDV1" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				93807E0A26B021AF0057404A /* INSTAGRID1.0.1 */,
+				93807E0A26B021AF0057404A /* INSTAGRIDV1 */,
 			);
 		};
 /* End PBXProject section */
@@ -362,7 +362,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		93807E0626B021AF0057404A /* Build configuration list for PBXProject "INSTAGRID1.0.1" */ = {
+		93807E0626B021AF0057404A /* Build configuration list for PBXProject "INSTAGRIDV1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93807E1D26B021B30057404A /* Debug */,
@@ -371,7 +371,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93807E1F26B021B30057404A /* Build configuration list for PBXNativeTarget "INSTAGRID1.0.1" */ = {
+		93807E1F26B021B30057404A /* Build configuration list for PBXNativeTarget "INSTAGRIDV1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93807E2026B021B30057404A /* Debug */,
